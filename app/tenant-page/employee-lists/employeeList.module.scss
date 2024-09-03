@@ -1,0 +1,42 @@
+.employeeList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+
+  li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .employeeName {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 1rem 0;
+  }
+
+  .emptyList {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #6c757d;
+    font-style: italic;
+  }
+}
+
+
+
+// メディアクエリ for responsive design
+@media (max-width: 768px) {
+  .employeeList {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,26 @@
+.accountDeleteButton {
+  font-size: 1.6rem;
+  color: red;
+  margin-top: 10px;
+}
+
+.cation {
+  margin: 10px 0;
+}
+
+.form {
+  * {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+
+  input {
+    border: 1px solid rgb(205, 205, 205);
+  }
+
+  .deleteNow {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+}

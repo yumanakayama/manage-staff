@@ -1,0 +1,46 @@
+.adminStatusWrap {}
+
+
+$btnSizeChange: -5px; // ボタン全体のサイズはこちらで変更。
+$btnBgColor: rgb(234, 234, 234); // ボタン本体の背景色はこちらで変更。
+$falsEennColor: white; // 権限オフ時の円の色はこちらで変更。
+$trueEennColor: #5cb85c; // 権限オン時の円の色はこちらで変更。
+
+.toggleButton {
+  $enn: calc(30px + $btnSizeChange);
+  display: block;
+  position: relative;
+  height: calc(30px + $btnSizeChange);
+  width: calc(60px + $btnSizeChange);
+  background-color: $btnBgColor;
+  border-radius: 55px;
+  border: 1px solid rgb(175, 175, 175);
+  transition-duration: 0.3s;
+
+  &::before {
+    content: '';
+    margin-top: -1px;
+    margin-left: -1px;
+    display: block;
+    width: $enn;
+    height: 100%;
+    border-radius: 50%;
+    background-color: $falsEennColor;
+    border: 1px solid rgb(175, 175, 175);
+    box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.3s;
+  }
+
+  &.admin {
+    background-color: $trueEennColor;
+    border: 1px solid $trueEennColor;
+
+    &::before {
+      left: auto;
+      margin-left: calc(100% - $enn);
+      border: 1px solid $trueEennColor;
+    }
+  }
+}

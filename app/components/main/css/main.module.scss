@@ -1,0 +1,20 @@
+$mainWidth: 180px;
+
+.main {
+  position: relative;
+  width: calc(100% - $mainWidth);
+  left: $mainWidth;
+  height: 100vh;
+  min-height: 300px;
+  overflow-x: hidden;
+  background-color: white;
+  padding: 0 1.5%;
+
+  @media screen and (max-width: 820px) {
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+}

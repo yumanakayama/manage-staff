@@ -1,107 +1,266 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
+/********** リセット **********/
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  word-break: break-all;
+}
+
+/********** 共通globalstyle **********/
+html {
+  font-size: 62.5%;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  position: relative;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+body * {
+  -webkit-text-size-adjust: 100%;
+  font-weight: 400;
+  font-family: "Noto Sans CJK JP", 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif, 'Roboto', -apple-system;
+  color: #333;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+button {
+  cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.fColorRed {
+  color: red;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+
+
+
+
+/* MUI　サークルアイコン */
+.customCircularWhite {
+  position: relative;
+  top: 2px;
+}
+
+.customCircularWhite .MuiCircularProgress-circle {
+  color: white !important;
+}
+
+
+
+/* トップ配属表カスタムスクロールバー */
+.calendarSimpleBar .simplebar-scrollbar:before {
+  /* スクロールバーのトラックホバー時ハンドルカラーキャンセル */
+  background: transparent !important;
+}
+
+.calendarSimpleBar .simplebar-track {
+  /* スクロールバーのトラック部分のスタイル */
+  background-color: rgb(241, 241, 241);
+  position: absolute;
+  top: 0;
+  border-radius: 0px;
+  /* Y軸スクロールバーのトラック部分のスタイル */
+  height: 100%;
+  /* X軸スクロールバーのトラック部分のスタイル */
+  width: 100%;
+  display: flex;
+}
+
+/* Y軸スクロールバーダミーの下線 */
+.calendarSimpleBar .simplebar-track::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 1px solid rgb(208, 208, 208);
+}
+
+.calendarSimpleBar .simplebar-scrollbar {
+  /* X軸スクロールバーのハンドル部分のスタイル */
+  height: 80%;
+  /* Y軸スクロールバーのハンドル部分のスタイル */
+  width: 100%;
+  background: #5cb85c;
+  border-radius: 4px;
+}
+
+.calendarSimpleBar .simplebar-scrollbar.simplebar-visible {
+  /* スクロールバーが表示されているときのスタイル */
+  /* バーの厚み */
+  /* width: 12px;
+  right: 0; */
+}
+
+/********** sp **********/
+@media screen and (max-width: 820px) {
+  .clickLoading {
+    top: 45px;
+    z-index: 5;
+  }
+
+  .calendarSimpleBar .simplebar-scrollbar {
+    /* X軸スクロールバーのハンドル部分のスタイル */
+    height: 50%;
+    /* Y軸スクロールバーのハンドル部分のスタイル */
+    width: 0%;
   }
 }
+
+/* 削除時アニメーションクラスを付与する */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s forwards;
+}
+
+/* テーマカラー  */
+/* 緑　#5cb85c  */
+
+/********** pc **********/
+@media screen and (min-width: 821px) {
+  body * {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+
+  a {
+    transition-duration: 0.3s;
+  }
+
+  a[href^="tel"] {
+    cursor: default;
+  }
+
+  .pcNone {
+    display: none !important;
+  }
+
+  br.sp {
+    display: none;
+  }
+
+  .inner {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 100px;
+  }
+
+  .spaceT01 {
+    margin-top: 10px;
+  }
+
+  .spaceT02 {
+    margin-top: 20px;
+  }
+
+  .spaceT03 {
+    margin-top: 30px;
+  }
+
+  .spaceB01 {
+    margin-bottom: 10px;
+  }
+
+  .spaceB02 {
+    margin-bottom: 20px;
+  }
+
+  .spaceB03 {
+    margin-bottom: 30px;
+  }
+
+
+  /* フォームページh1 */
+  .formPageH1 {
+    color: #5cb85c;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #5cb85c;
+  }
+}
+
+/********** sp **********/
+@media screen and (max-width: 820px) {
+  body * {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .spNone {
+    display: none !important;
+  }
+
+  br.pc {
+    display: none;
+  }
+
+  .inner {
+    padding: 0 5%;
+    /* padding-bottom: 150px; */
+  }
+
+  .spaceT01 {
+    margin-top: 10px;
+  }
+
+  .spaceT02 {
+    margin-top: 20px;
+  }
+
+  .spaceT03 {
+    margin-top: 30px;
+  }
+
+  .spaceB01 {
+    margin-bottom: 10px;
+  }
+
+  .spaceB02 {
+    margin-bottom: 20px;
+  }
+
+  .spaceB03 {
+    margin-bottom: 30px;
+  }
+
+  /* フォームページh1 */
+  .formPageH1 {
+    color: #5cb85c;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #5cb85c;
+  }
+}
+
+/* sp時スマホのメニュー */

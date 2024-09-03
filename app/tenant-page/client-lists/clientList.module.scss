@@ -1,0 +1,67 @@
+$theme-color: #5cb85c;
+$background-color: #f8f9fa;
+$text-color: #333;
+$error-color: #dc3545;
+$border-radius: 4px;
+$transition: all 0.3s ease;
+
+// リストのスタイル
+.clientList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: $transition;
+
+    .clientName {
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: $theme-color;
+      margin-bottom: 10px;
+    }
+
+    .strong {
+      font-weight: bold;
+    }
+
+    .clientDescription {
+      color: lighten($text-color, 20%);
+      margin-bottom: 15px;
+    }
+
+    .deleteButtonWrapper {
+      text-align: right;
+    }
+  }
+
+  .emptyList {
+    text-align: center;
+    color: lighten($text-color, 30%);
+    font-style: italic;
+    padding: 20px;
+  }
+}
+
+
+// レスポンシブデザイン調整
+@media (max-width: 480px) {
+  .clientList {
+    li {
+      padding: 15px;
+
+      .clientName {
+        // font-size: 1.1rem;
+      }
+
+      .clientDescription {
+        // font-size: 0.85rem;
+      }
+    }
+  }
+}

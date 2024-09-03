@@ -1,0 +1,30 @@
+$theme-color: #5cb85c;
+$background-color: #f8f9fa;
+$text-color: #333;
+$error-color: #dc3545;
+$border-radius: 4px;
+$transition: all 0.3s ease;
+
+.deleteButton {
+  background-color: $error-color;
+  color: white;
+  border: none;
+  border-radius: $border-radius;
+  padding: 5px 15px;
+
+  cursor: pointer;
+  transition: $transition;
+
+  @media (max-width: 480px) {
+    padding: 4px 10px;
+  }
+
+  &:hover {
+    background-color: darken($error-color, 10%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($error-color, 0.3);
+  }
+}

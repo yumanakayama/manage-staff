@@ -1,3 +1,5 @@
+@use './variables'as *;
+
 /********** リセット **********/
 * {
   margin: 0;
@@ -105,7 +107,7 @@ button {
 }
 
 /********** sp **********/
-@media screen and (max-width: 820px) {
+@include mq(md) {
   .clickLoading {
     top: 45px;
     z-index: 5;
@@ -208,7 +210,7 @@ button {
 }
 
 /********** sp **********/
-@media screen and (max-width: 820px) {
+@include mq(md) {
   body * {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -262,5 +264,3 @@ button {
     border-bottom: 2px solid #5cb85c;
   }
 }
-
-/* sp時スマホのメニュー */

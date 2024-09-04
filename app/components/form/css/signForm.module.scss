@@ -1,3 +1,5 @@
+@use '/app/css/variables'as *;
+
 $theme-color: #5cb85c;
 $background-color: #f8f9fa;
 $text-color: #333;
@@ -41,7 +43,7 @@ $transition: all 0.3s ease;
     min-height: 100px;
     resize: vertical;
 
-    @media screen and (max-width: 820px) {
+    @include mq(md) {
       min-height: 150px;
     }
   }

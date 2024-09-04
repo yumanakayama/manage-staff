@@ -1,3 +1,5 @@
+@use '/app/css/variables'as *;
+
 /* リロード後の初回マウントちらつきを隠す、 */
 .loadingBar {
   width: 100%;
@@ -7,7 +9,7 @@
   left: 0;
   z-index: 4;
 
-  @media screen and (max-width: 820px) {
+  @include mq(md) {
     top: 45px;
   }
 }
@@ -22,7 +24,7 @@
   background-color: white;
   z-index: 4;
 
-  @media screen and (max-width: 820px) {
+  @include mq(md) {
     top: 45px;
   }
 }
@@ -39,7 +41,7 @@
   animation: loading 0.8s ease-in-out forwards;
   /* 修正: forwards を追加 */
 
-  @media screen and (max-width: 820px) {
+  @include mq(md) {
     height: 2px;
   }
 }

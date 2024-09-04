@@ -1,3 +1,5 @@
+@use '/app/css/variables'as *;
+
 $mainWidth: 180px;
 
 .main {
@@ -10,7 +12,7 @@ $mainWidth: 180px;
   background-color: white;
   padding: 0 1.5%;
 
-  @media screen and (max-width: 820px) {
+  @include mq(md) {
     width: 100%;
     left: 0;
     height: auto;

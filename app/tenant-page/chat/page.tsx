@@ -176,7 +176,7 @@ const Chat = () => {
 
   return (
     <>
-      {loading && <HorizontailCalendarLoadingBar />}
+      {/* {loading && <HorizontailCalendarLoadingBar />} */}
       <h1 className='formPageH1'>チーム内チャット</h1>
       <div className='inner'>
         <ul className={styles.commentsList}>

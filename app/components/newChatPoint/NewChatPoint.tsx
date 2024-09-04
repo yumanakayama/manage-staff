@@ -108,7 +108,7 @@ const NewChatPoint = () => {
 
   return (
     <>
-      {hasNewComment ? <span className={styles.notificationDot}></span> : <></>}
+      {hasNewComment ? <span className=""></span> : <></>}
     </>
   )
 }

@@ -73,7 +73,7 @@ const Sidebar = () => {
             <li onClick={() => { setSpMenu(false), handleClick() }}>
               <Link href="/tenant-page/chat" className={`${styles.menuItem} ${pathname === "/tenant-page/chat" ? styles.current : ""}`} >
                 <span className={`${styles.icon}`}>　💬</span>チーム内チャット
-                <NewChatPoint />
+                {/* <NewChatPoint /> */}
               </Link>
             </li>
             {userAuth.master && (
@@ -86,9 +86,9 @@ const Sidebar = () => {
           </>
         )}
       </ul>
-      {clickLoading && (
+      {/* {clickLoading && (
         <LoadingBar />
-      )}
+      )} */}
       {spMenu && <div className={styles.spMenuBg} onClick={() => setSpMenu(false)}></div>}
 
     </>

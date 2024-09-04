@@ -217,7 +217,7 @@ const HorizontalCalendar = ({ assignLists }: { assignLists: Assign[] }) => {
 
   return (
     <>
-      {loading && <HorizontailCalendarLoadingBar />}
+      {/* {loading && <HorizontailCalendarLoadingBar />} */}
       {/* 日付選択 */}
       <div className={styles.dateSelecter}>
         <select value={selectedYear} onChange={handleYearChange}>

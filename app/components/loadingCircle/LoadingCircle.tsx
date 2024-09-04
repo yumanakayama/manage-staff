@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './loadingCircle.module.scss'; // スピナーのCSSをインポート
+import styles from './loadingCircle.module.scss';
 
 const LoadingCircle = () => {
   return (

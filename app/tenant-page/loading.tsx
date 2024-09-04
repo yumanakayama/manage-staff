@@ -3,8 +3,7 @@ import LoadingBar from '../components/LoadingBar/LoadingBar'
 
 const loading = () => {
   return (
-    <></>
-    // <LoadingBar />
+    <LoadingBar />
   )
 }
 

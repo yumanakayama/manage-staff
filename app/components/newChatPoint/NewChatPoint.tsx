@@ -13,7 +13,7 @@ const NewChatPoint = () => {
   useEffect(() => {
     // WebSocket 接続の設定
     const port = process.env.NEXT_PUBLIC_WEBSOCKET_URL;
-    const ws = new WebSocket('wss://manage-staff.vercel.app:8080');// デプロイ後ドメイン変更。
+    const ws = new WebSocket('wss://manage-staff.vercel.app:443');// デプロイ後ドメイン変更。
 
     // WebSocket接続時にテナントIDをサーバーに送信
     ws.onopen = () => {

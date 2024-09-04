@@ -132,7 +132,7 @@ const Chat = () => {
   // 2024/08/30追加。チャット最新投稿通知。投稿されるとトリガーになり矯正で取得させる。
   useEffect(() => {
     // WebSocket 接続の設定
-    const ws = new WebSocket('ws://manage-staff.vercel.app:8080');
+    const ws = new WebSocket('wss://manage-staff.vercel.app:443');
 
     // WebSocket接続時にテナントIDをサーバーに送信
     ws.onopen = () => {

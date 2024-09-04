@@ -10,7 +10,7 @@ interface Employee {
   tenantId: string
 }
 
-export const fetchEmployeeLists = async () => {
+const fetchEmployeeLists = async () => {
 
   // middlewareでSSR時にtokenを抽出するためheadersを使用する。
   const headersList = headers()
@@ -31,6 +31,7 @@ export const fetchEmployeeLists = async () => {
     return employeeLists
   } catch (error) {
     throw error
+    return [] // エラー時には空の配列を返す
   }
 }
 

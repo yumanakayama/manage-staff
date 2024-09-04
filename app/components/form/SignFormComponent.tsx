@@ -154,15 +154,34 @@ const SignFormComponent = ({ submit, buttonText, nameText, userAuth, profileBefo
           })
           const data = await response.json()
           if (response.ok) {
-            alert(data.message)
             setEmail("")
             setPassword("")
             setEmailValMessage(false)
             setEmailValMessage2(false)
             setPasswordValMessage(false)
-            window.location.href = "/tenant-page"
+
+            // 編集が正常に完了したら更新された新たなtokenを再取得してくる。
+            const tenantData = await fetch(`/api/tenant/login`, {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: email,
+                password: password
+              }),
+            })
+            if (tenantData.ok) {
+              alert(data.message)
+              window.location.href = "/tenant-page"
+              return;
+            } else {
+              window.location.href = "/tenant-page"
+              return;
+            }
           } else {
-            alert(data.message)
+            return;
           }
         } catch (error) {
           alert("エラーが発生しました。")
@@ -239,6 +258,7 @@ const SignFormComponent = ({ submit, buttonText, nameText, userAuth, profileBefo
           setEmailValMessage2(false)
           setPasswordValMessage(false)
           window.location.href = "/tenant-page"
+          return;
         } else {
           alert(data.message)
         }
@@ -271,15 +291,33 @@ const SignFormComponent = ({ submit, buttonText, nameText, userAuth, profileBefo
           })
           const data = await response.json()
           if (response.ok) {
-            alert(data.message)
             setEmail("")
             setPassword("")
             setEmailValMessage(false)
             setEmailValMessage2(false)
             setPasswordValMessage(false)
-            window.location.href = "/tenant-page"
+            // 編集が正常に完了したら更新された新たなtokenを再取得してくる。
+            const tenantData = await fetch(`/api/employee/login`, {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: email,
+                password: password
+              }),
+            })
+            if (tenantData.ok) {
+              alert(data.message)
+              window.location.href = "/tenant-page"
+              return;
+            } else {
+              window.location.href = "/tenant-page"
+              return;
+            }
           } else {
-            alert(data.message)
+            return;
           }
         } catch (error) {
           alert("エラーが発生しました。")

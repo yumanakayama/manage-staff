@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
+        <link rel="icon" sizes="32x32" href="/icon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></link>
       </head>
       <body className={inter.className}>

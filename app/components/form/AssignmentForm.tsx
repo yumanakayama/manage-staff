@@ -250,7 +250,7 @@ const AssignmentForm = ({ employeesClients }: EmployeesClients) => {
               <span className={styles.dateLabel}>日</span>
             </div>
 
-            <div>
+            <div className={styles.dataRangeMessage}>
               {startDate.year}月{startDate.month}日{startDate.day} から {endDate.year}月{endDate.month}日{endDate.day}まで。
             </div>
 

@@ -26,7 +26,7 @@
 .assignFormContainer {
   position: fixed;
   left: 180px;
-  bottom: -282px;
+  bottom: -292px;
   width: calc(100% - 180px);
   transition: all 0.3s ease-in-out;
   background-color: #ffffff;
@@ -60,11 +60,15 @@
           border: 1px solid #ccc;
           border-radius: 4px;
           gap: 2px;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
 
           @include mq(md) {
             display: block;
           }
+        }
+
+        .dataRangeMessage {
+          margin-bottom: 20px;
         }
 
         .dateSelect {
